@@ -1,0 +1,50 @@
+/* Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap");
+/* Resets */
+* {
+  background-color: none;
+  border: none;
+  box-sizing: border-box;
+  color: #393939;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Open Sans";
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Globals */
+.container {
+  margin: auto;
+  max-width: 80rem;
+}
+
+h1,
+h2 {
+  font-size: 3.75rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 2.0625rem;
+}
+
+p {
+  font-size: 1.125rem;
+}
