@@ -51,6 +51,8 @@
   }
 
   &__hero-button {
+    margin-top: 1.25rem;
+
     @extend %button;
 
     &-background {
@@ -76,7 +78,7 @@
   &__nav-bar {
     align-items: baseline;
     justify-content: space-between;
-    padding: 2.5rem;
+    padding: 1.25rem;
   }
 
   &__nav-bar,
@@ -93,7 +95,7 @@
   }
 
   &__nav-list {
-    gap: 60px;
+    gap: 3.75rem;
   }
 }
 
@@ -104,7 +106,7 @@
   text-align: center;
 
   &__button {
-    margin-top: 60px;
+    margin-top: 3.75rem;
 
     @extend %button;
 
@@ -218,12 +220,12 @@
 
     &-image {
       align-items: center;
-      border: $nitroblue 4px solid;
+      border: $nitroblue 0.25rem solid;
       display: flex;
       height: 100%;
       justify-content: center;
-      left: -20px;
-      top: -20px;
+      left: -1.25rem;
+      top: -1.25rem;
 
       @extend %button-text;
     }
@@ -250,5 +252,48 @@
 
   &__bold {
     font-weight: 700;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: $nitropink;
+  overflow: hidden;
+  padding: 5rem 0;
+  position: relative;
+
+  &__background {
+    opacity: 25%;
+    overflow: hidden;
+    position: absolute;
+    width: 7.5rem;
+
+    &--left {
+      left: -2.5rem;
+      top: 1.25rem;
+    }
+
+    &--right {
+      right: -2.5rem;
+      bottom: 1.25rem;
+    }
+  }
+
+  &__bold {
+    font-weight: 700;
+  }
+
+  &__container {
+    display: flex;
+    gap: 12.5rem;
+    justify-content: center;
+  }
+
+  &__heading {
+    margin-bottom: 1.25rem;
+  }
+
+  &__icon {
+    @extend %icon;
   }
 }
