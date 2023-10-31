@@ -25,11 +25,11 @@ ul {
 }
 
 /* Globals */
-.header__logo, .different__icon, .footer__icon {
+.different__icon, .footer__icon, .header__logo {
   width: 3.125rem;
 }
 
-.header__hero-button-text, .header__nav-link, .products__button-text, .different__button-text, .different__image-image {
+.header__hero-button-text, .products__button-text, .different__button-text, .different__image-border, .different__image-image, .header__nav-link {
   font-size: 1.3125rem;
   text-transform: uppercase;
 }
@@ -58,34 +58,6 @@ p {
   font-size: 1.125rem;
 }
 
-/* Globals */
-.different__image, .different__button, .products__button, .header__hero-button {
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  width: 11.25rem;
-}
-.different__image-background, .different__button-background, .products__button-background, .header__hero-button-background {
-  background-color: #5bacc3;
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  z-index: 0;
-}
-.different__image-image, .different__button-text, .products__button-text, .header__hero-button-text {
-  border: #393939 0.125rem solid;
-  color: #fff;
-  left: -0.3125rem;
-  padding: 1.25rem;
-  position: relative;
-  top: -0.3125rem;
-  z-index: 1;
-}
-.different__image-image:active, .different__button-text:active, .products__button-text:active, .header__hero-button-text:active {
-  left: 0;
-  top: 0;
-}
-
 /* Header */
 .header {
   background-color: #fff0ed;
@@ -93,21 +65,6 @@ p {
 .header__brand {
   font-size: 3.75rem;
   font-weight: 300;
-}
-.header__hero {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 3.75rem 5rem;
-}
-.header__hero-button {
-  margin-top: 1.25rem;
-}
-.header__hero-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  width: 22rem;
 }
 .header__nav-bar {
   align-items: baseline;
@@ -122,6 +79,51 @@ p {
 }
 .header__nav-list {
   gap: 3.75rem;
+}
+
+/* Button */
+.header__hero-button, .products__button, .different__button, .different__image {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 11.25rem;
+}
+.header__hero-button-background, .products__button-background, .different__button-background, .different__image-background {
+  background-color: #5bacc3;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+.header__hero-button-text, .products__button-text, .different__button-text, .different__image-border, .different__image-image {
+  border: #393939 0.125rem solid;
+  color: #fff;
+  left: -0.3125rem;
+  padding: 1.25rem;
+  position: relative;
+  top: -0.3125rem;
+  z-index: 1;
+}
+.header__hero-button-text:active, .products__button-text:active, .different__button-text:active, .different__image-border:active, .different__image-image:active {
+  left: 0;
+  top: 0;
+}
+
+/* Header */
+.header__hero {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 3.75rem 5rem;
+}
+.header__hero-button {
+  margin-top: 1.25rem;
+}
+.header__hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 22rem;
 }
 
 /* Our Products */
@@ -201,14 +203,34 @@ p {
   background-image: url("../assets/images/cold-brew-background.png");
   background-size: cover;
 }
+.different__image-border {
+  border: #5bacc3 0.25rem solid;
+  height: 100%;
+  left: -1.25rem;
+  position: absolute;
+  top: -1.25rem;
+  width: 100%;
+}
 .different__image-image {
   align-items: center;
-  border: #5bacc3 0.25rem solid;
+  border: none;
   display: flex;
   height: 100%;
   justify-content: center;
   left: -1.25rem;
   top: -1.25rem;
+}
+.different__image-image:active {
+  left: -1.25rem;
+  top: -1.25rem;
+}
+@keyframes rotateImage {
+  to {
+    rotate: 360deg;
+  }
+}
+.different__image-image:hover {
+  animation: 2s infinite linear rotateImage;
 }
 
 /* Discount */
@@ -218,9 +240,18 @@ p {
   width: 90%;
 }
 .discount__text {
+  animation: 2.5s alternate infinite flash linear;
   background-color: #393939;
   padding: 2.5rem 0;
   text-align: center;
+}
+@keyframes flash {
+  from {
+    background-color: #393939;
+  }
+  to {
+    background-color: #5bacc3;
+  }
 }
 .discount__text, .discount__bold {
   color: #fff;

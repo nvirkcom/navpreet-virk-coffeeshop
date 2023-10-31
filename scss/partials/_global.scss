@@ -66,3 +66,73 @@ h3 {
 p {
   font-size: 1.125rem;
 }
+
+/* Header */
+.header {
+  background-color: $nitropink;
+
+  &__brand {
+    font-size: 3.75rem;
+    font-weight: 300;
+  }
+
+  &__logo {
+    @extend %icon;
+  }
+
+  &__nav-bar {
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 1.25rem;
+  }
+
+  &__nav-bar,
+  &__nav-list {
+    display: flex;
+  }
+
+  &__nav-link {
+    @extend %nav-link;
+
+    &--blue {
+      color: $nitroblue;
+    }
+  }
+
+  &__nav-list {
+    gap: 3.75rem;
+  }
+}
+
+/* Button */
+%button {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 11.25rem;
+
+  &-background {
+    background-color: $nitroblue;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+  }
+
+  &-text {
+    @extend %nav-link;
+
+    border: $graphite 0.125rem solid;
+    color: $white;
+    left: -0.3125rem;
+    padding: 1.25rem;
+    position: relative;
+    top: -0.3125rem;
+    z-index: 1;
+
+    &:active {
+      left: 0;
+      top: 0;
+    }
+  }
+}
